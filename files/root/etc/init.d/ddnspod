@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=80
+NAME=ddnspod
+
+start() {
+	( /usr/sbin/ddnspod >> /var/log/ddnspod.log 2>&1 ) &
+}
+
+stop() {
+	killall ddnspod
+}
+
+restart() {
+    stop
+    sleep 1
+    start
+}
+

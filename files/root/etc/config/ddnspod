@@ -1,0 +1,2 @@
+config base 'base'
+	option enable '0'

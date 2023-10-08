@@ -1,0 +1,10 @@
+#!/bin/sh 
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@ddnspod[-1]
+	add ucitrack ddnspod
+	set ucitrack.@ddnspod[-1].init=ddnspod
+	commit ucitrack
+EOF
+
+exit 0
